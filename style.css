@@ -12,6 +12,7 @@
     --warning-color: #f39c12;
     --danger-color: #e74c3c;
     --info-color: #3498db;
+    --inherit-color: #c0c0c0;
     --white: #ffffff;
     --black: #000000;
     --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -26,7 +27,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--accent-color);
+    color: var(--inherit-color);
     background-color: var(--accent-color);
     line-height: 1.6;
 }
@@ -147,7 +148,7 @@ a {
     gap: 8px;
     cursor: pointer;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--accent-color);
     transition: var(--transition);
 }
 
@@ -168,14 +169,14 @@ a {
 }
 
 .dropdown-content a {
-    color: var(--accent-color);
+    color: var(--text-color);
     padding: 12px 16px;
     display: block;
     transition: var(--transition);
 }
 
 .dropdown-content a:hover {
-    background-color: var(--accent-color);
+    background-color: var(--text-color);
     color: var(--primary-color);
 }
 
