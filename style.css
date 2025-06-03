@@ -51,7 +51,7 @@ a {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: var(--accent-color);
+    transition: var(--transition);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -168,7 +168,7 @@ a {
 }
 
 .dropdown-content a {
-    color: var(--text-color);
+    color: var(--accent-color);
     padding: 12px 16px;
     display: block;
     transition: var(--transition);
