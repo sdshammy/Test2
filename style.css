@@ -51,7 +51,7 @@ a {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: var(--transition);
+    transition: var(--accent-color);
     display: inline-flex;
     align-items: center;
     justify-content: center;
