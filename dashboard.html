@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - THINK TANK - Canada Life Ideation Portal</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/CL.jpg" alt="Canada Life">
+            </a>
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="myidea.html"><i class="fas fa-lightbulb"></i> My Idea</a>
+                <a href="track.html"><i class="fas fa-project-diagram"></i> My Challenges</a>
+                <a href="dashboard.html" class="active"><i class="fas fa-chart-line"></i> Dashboard</a>
+                <div class="user-dropdown">
+                    <button class="user-btn">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="username">Username</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="login.html" id="login-btn">Login</a>
+                        <a href="register.html" id="register-btn">Register</a>
+                        <a href="profile.html" id="profile-btn" style="display:none;">Profile</a>
+                        <a href="#" id="logout-btn" style="display:none;">Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Dashboard Main Content -->
+    <main class="dashboard-container">
+        <div class="container">
+            <h1 class="dashboard-title"></h1>
+            
+            <!-- Summary Cards -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="card-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Total Ideas</h3>
+                    </div>
+                    <div class="card-body">
+                        <span id="total-ideas">0</span>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="card-header">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Implemented</h3>
+                    </div>
+                    <div class="card-body">
+                        <span id="implemented-ideas">0</span>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="card-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Active Users</h3>
+                    </div>
+                    <div class="card-body">
+                        <span id="active-users">0</span>
+                    </div>
+                </div>
+                
+                <div class="summary-card">
+                    <div class="card-header">
+                        <i class="fas fa-star"></i>
+                        <h3>Top Rated</h3>
+                    </div>
+                    <div class="card-body">
+                        <span id="top-rated-idea">-</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Charts Row -->
+            <div class="charts-row">
+                <div class="chart-container">
+                    <h3>Ideas by Status</h3>
+                    <canvas id="statusChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Ideas by Department</h3>
+                    <canvas id="departmentChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h2>Recent Activity</h2>
+                <div class="activity-list" id="activity-feed">
+                    <!-- Activity items will be loaded here -->
+                </div>
+            </div>
+            
+            <!-- Top Ideas -->
+            <div class="top-ideas">
+                <h2>Top Rated Ideas</h2>
+                <div class="ideas-grid" id="top-ideas-container">
+                    <!-- Top ideas will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer content -->
+            </div>
+            <div class="footer-bottom">
+                <p>© The Canada Life Assurance Company 2009 - 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase and Chart.js -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="js/firebase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

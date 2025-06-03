@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Idea - THINK TANK</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar">
+        <!-- Copy from index.html -->
+    </nav>
+
+    <!-- Submission Hero -->
+    <section class="submission-hero">
+        <div class="container">
+            <h1>Submit Your Idea</h1>
+            <p>Operations Transformation</p>
+        </div>
+    </section>
+
+    <!-- Submission Form -->
+    <section class="submission-form-section">
+        <div class="container">
+            <form id="idea-submission-form">
+                <div class="form-header">
+                    <h2>Idea Details</h2>
+                    <p>All fields are required unless marked optional</p>
+                </div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="idea-title">Idea Title*</label>
+                        <input type="text" id="idea-title" placeholder="Brief, descriptive title" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="idea-category">Category*</label>
+                        <select id="idea-category" required>
+                            <option value="">Select a category</option>
+                            <option value="Operations">Operations</option>
+                            <option value="Quality">Quality</option>
+                            <option value="Efficiency">Efficiency</option>
+                            <option value="Cost Reduction">Cost Reduction</option>
+                            <option value="Customer Experience">Customer Experience</option>
+                            <option value="Employee Experience">Employee Experience</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="idea-lob">Line of Business*</label>
+                        <select id="idea-lob" required>
+                            <option value="">Select LOB</option>
+                            <option value="GCC">UnderWriting</option>
+                            <option value="Underwriting">GRS</option>
+                            <option value="Wealth Management">BPO</option>
+                            <option value="Wealth Management">CE-Claims Examiners</option>
+                            <option value="Wealth Management">CP-Claims Processors</option>
+                            <option value="WFM">Wealth</option>
+                            <option value="Insurance Solutions">Insurance Operations</option>
+                            <option value="BPO">Taxation</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="idea-department">Department*</label>
+                        <select id="idea-department" required>
+                            <option value="">Select Department</option>
+                            <option value="BPO">BPO</option>
+                            <option value="GCC">GCC</option>
+                            <option value="Training">Training</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Underwriting">Underwriting</option>
+                            <option value="Wealth Management">Wealth Management</option>
+                            <option value="WFM">Workforce Management</option>
+                            <option value="Reporting">Reporting</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="idea-description">Detailed Description*</label>
+                        <textarea id="idea-description" rows="6" placeholder="Describe your idea in detail. What problem does it solve? How would it work?" required></textarea>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="idea-benefits">Expected Benefits*</label>
+                        <textarea id="idea-benefits" rows="4" placeholder="What benefits would this idea bring? (Efficiency gains, cost savings, quality improvements, etc.)" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="idea-impact">Impact Level*</label>
+                        <select id="idea-impact" required>
+                            <option value="">Select impact level</option>
+                            <option value="High">High (Organization-wide impact)</option>
+                            <option value="Medium">Medium (Department/Team impact)</option>
+                            <option value="Low">Low (Process-specific impact)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="idea-tags">Tags (Optional)</label>
+                        <input type="text" id="idea-tags" placeholder="e.g., automation, digital, workflow">
+                        <small>Separate tags with commas</small>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="idea-attachments">Attachments (Optional)</label>
+                        <div class="file-upload">
+                            <input type="file" id="idea-attachments" multiple>
+                            <label for="idea-attachments" class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Choose files or drag here</span>
+                            </label>
+                            <div class="file-preview" id="file-preview"></div>
+                        </div>
+                        <small>Max file size: 5MB. Supported formats: PDF, DOCX, PPTX, JPG, PNG</small>
+                    </div>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" id="save-draft" class="btn-secondary">Save Draft</button>
+                    <button type="submit" id="submit-idea" class="btn-primary">Submit Idea</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer>
+        <!-- Copy from index.html -->
+    </footer>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content confirmation-modal">
+            <span class="close-modal">&times;</span>
+            <div class="confirmation-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>Idea Submitted Successfully!</h2>
+                <p>Your idea has been received and will be reviewed by our team. You'll be notified about its progress.</p>
+                <div class="confirmation-actions">
+                    <a href="index.html" class="btn-primary">Back to Home</a>
+                    <a href="submit.html" class="btn-secondary">Submit Another Idea</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/firebase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/submit.js"></script>
+</body>
+</html>

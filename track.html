@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation Process - THINK TANK - Canada Life Ideation Portal</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/track.css">
+</head>
+<body>
+    <!-- Navigation (Same as index.html) -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/CL.jpg" alt="Canada Life">
+            </a>
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="myidea.html"><i class="fas fa-lightbulb"></i> My Idea</a>
+                <a href="track.html" class="active"><i class="fas fa-project-diagram"></i> My Challenges</a>
+                <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+                <div class="user-dropdown">
+                    <button class="user-btn">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="username">Username</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="login.html" id="login-btn">Login</a>
+                        <a href="register.html" id="register-btn">Register</a>
+                        <a href="profile.html" id="profile-btn" style="display:none;">Profile</a>
+                        <a href="#" id="logout-btn" style="display:none;">Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Process Tracking Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <h1>OPERATIONS TRANSFORMATION</h1>
+                <p>A structured approach to transforming ideas into business value</p>
+            </div>
+            
+            <div class="process-track">
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Submit</h3>
+                    <p>Submit your innovative idea with detailed classification</p>
+                    <a href="myidea.html" class="step-link">My Idea <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="process-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-arrow"></div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Review</h3>
+                    <p>Initial review for duplicates and validation</p>
+                    <div class="step-stats">
+                        <span class="stat-badge">15 in review</span>
+                    </div>
+                </div>
+                
+                <div class="process-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-arrow"></div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Assign</h3>
+                    <p>SPOC assignment with priority and timeline setting</p>
+                    <div class="step-stats">
+                        <span class="stat-badge">8 assigned</span>
+                    </div>
+                </div>
+                
+                <div class="process-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-arrow"></div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Implement</h3>
+                    <p>Implementation with progress tracking and stakeholder collaboration</p>
+                    <div class="step-stats">
+                        <span class="stat-badge">5 in progress</span>
+                    </div>
+                </div>
+                
+                <div class="process-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-arrow"></div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Deliver</h3>
+                    <p>Measure business value and impact realization</p>
+                    <div class="step-stats">
+                        <span class="stat-badge">12 implemented</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="process-ideas">
+                <h2>Ideas in Process</h2>
+                <div class="ideas-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Current Stage</th>
+                                <th>Days in Stage</th>
+                                <th>Assigned To</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="process-ideas-body">
+                            <!-- Will be populated by JavaScript -->
+                            <tr>
+                                <td colspan="6" class="loading-row">
+                                    <i class="fas fa-spinner fa-spin"></i> Loading ideas...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                
+            </div>
+            <div class="footer-bottom">
+                <p>© The Canada Life Assurance Company 2009 - 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Same scripts as index.html -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/track.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

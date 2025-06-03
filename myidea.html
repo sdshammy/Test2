@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Ideas - THINK TANK - Canada Life Ideation Portal</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/myideas.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/CL.jpg" alt="Canada Life">
+            </a>
+            <div class="nav-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="myidea.html"><i class="fas fa-lightbulb"></i> My Idea</a>
+                <a href="track.html"><i class="fas fa-project-diagram"></i> Challenges</a>
+                <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+                <div class="user-dropdown">
+                    <button class="user-btn">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="username">Username</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="login.html" id="login-btn">Login</a>
+                        <a href="register.html" id="register-btn">Register</a>
+                        <a href="profile.html" id="profile-btn" style="display:none;">Profile</a>
+                        <a href="#" id="logout-btn" style="display:none;">Logout</a>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="my-ideas-container">
+        <img src="Idea.jpg" alt="Canada Life">
+        <div class="container">
+            <h1 class="page-title">My Ideas</h1>
+            
+            <!-- Filter Options -->
+            <div class="filter-options">
+                <div class="filter-group">
+                    <label for="status-filter">Filter by Status:</label>
+                    <select id="status-filter">
+                        <option value="all">All Statuses</option>
+                        <option value="submitted">Submitted</option>
+                        <option value="under-review">Under Review</option>
+                        <option value="approved">Approved</option>
+                        <option value="implemented">Implemented</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sort-ideas">Sort by:</label>
+                    <select id="sort-ideas">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="votes">Most Votes</option>
+                        <option value="comments">Most Comments</option>
+                    </select>
+                </div>
+                
+                <button id="reset-filters" class="btn-secondary">Reset Filters</button>
+            </div>
+            
+            <!-- Ideas Stats -->
+            <div class="ideas-stats">
+                <div class="stat-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <h3 id="total-ideas">0</h3>
+                        <p>Total Ideas</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h3 id="implemented-ideas">0</h3>
+                        <p>Implemented</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-thumbs-up"></i>
+                    <div>
+                        <h3 id="total-votes">0</h3>
+                        <p>Total Votes</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-comments"></i>
+                    <div>
+                        <h3 id="total-comments">0</h3>
+                        <p>Total Comments</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ideas List -->
+            <div class="ideas-list" id="ideas-container">
+                <!-- Ideas will be loaded here dynamically -->
+                <div class="loading-placeholder">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+            </div>
+            
+            <!-- Empty State -->
+            <div class="empty-state" id="empty-state" style="display: none;">
+                <i class="fas fa-lightbulb"></i>
+                <h3>No Ideas Found</h3>
+                <p>You haven't submitted any ideas yet or no ideas match your filters.</p>
+                <a href="submit.html" class="btn-primary">Submit Your First Idea</a>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="load-more" id="load-more-container" style="display: none;">
+                <button id="load-more-btn" class="btn-secondary">Load More Ideas</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Idea Details Modal -->
+    <div id="idea-modal" class="modal">
+        <div class="modal-content idea-modal">
+            <span class="close-modal">&times;</span>
+            <div id="idea-modal-content">
+                <!-- Content loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer content -->
+            </div>
+            <div class="footer-bottom">
+                <p>© The Canada Life Assurance Company 2009 - 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="js/firebase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/myideas.js"></script>
+</body>
+</html>
